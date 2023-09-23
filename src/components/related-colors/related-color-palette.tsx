@@ -1,13 +1,17 @@
+import { AdjustColorActions } from '../../color-reducer';
 import ColorChangeSwatch from '../shared/color-change-swatch';
+import { Dispatch } from 'react';
 
 type RelatedColorPaletteProps = {
   title: string;
   hexColors: string[];
+  dispatch: Dispatch<AdjustColorActions>;
 };
 
 const RelatedColorPalette = ({
   title,
   hexColors,
+  dispatch,
 }: RelatedColorPaletteProps) => {
   return (
     <section>
@@ -18,7 +22,10 @@ const RelatedColorPalette = ({
             <ColorChangeSwatch
               key={hexColor}
               hexColor={hexColor}
-              className="w-full h-full"
+              onClick={() =>
+                dispatch({ type: 'update-hex-color', payload: { hexColor } })
+              }
+              className="h-full w-full"
             />
           );
         })}
