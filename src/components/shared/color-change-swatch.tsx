@@ -1,7 +1,6 @@
 import clsx from 'clsx';
-import { useContext } from 'react';
-import { ColorContext } from '../../context';
 import Button from './button';
+import { useContext } from '../../context';
 
 type ColorChangeSwatchProps = {
   hexColor: string;
@@ -9,7 +8,7 @@ type ColorChangeSwatchProps = {
 };
 
 const ColorChangeSwatch = ({ hexColor, className }: ColorChangeSwatchProps) => {
-  const { dispatch } = useContext(ColorContext);
+  const { dispatch } = useContext();
 
   return (
     <Button

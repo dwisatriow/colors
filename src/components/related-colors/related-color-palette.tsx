@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { ColorContext } from '../../context';
 import ColorChangeSwatch from '../shared/color-change-swatch';
 
 type RelatedColorPaletteProps = {
